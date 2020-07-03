@@ -1,0 +1,21 @@
+###############################################################
+# mCT_bed.mac                                                 #
+# Reads in CT image of mCT patient bed for simulation         #
+# GN 2019                                                     #
+###############################################################
+
+# FOR THE PATIENT BED 
+/gate/world/daughters/name bed
+/gate/world/daughters/insert ImageNestedParametrisedVolume
+
+# Read in image & materials files
+/gate/bed/geometry/setImage ./Geometry/ct_hd_bed_crop_ds_2.h33
+/gate/bed/geometry/setRangeToMaterialFile ./Geometry/BedRange.dat
+
+# Centralise within scanner
+/gate/bed/placement/setTranslation	0. -129. 111. mm
+
+# Cuts
+/gate/physics/Gamma/SetCutInRegion      bed 0.1 mm
+/gate/physics/Electron/SetCutInRegion   bed 0.1 mm
+/gate/physics/Positron/SetCutInRegion   bed 0.1 mm

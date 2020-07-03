@@ -1,0 +1,72 @@
+##########################################
+# PET_scan.mac                           #
+#           - GN 28/11/18                #
+# Adapted from "Tomo_Scan_General.mac"	 #
+# Modular approach to create generic PET #
+# scan simulation                        #
+##########################################
+#
+#  Header from original macro file:
+#
+##########################################
+# TOMO_Scan_General.mac                  #
+#                                        #
+# Tomographic scan with aliasing for 	 #
+# scanner type and collimator used.      #
+# Master macro, with as much as possible #
+# used in a modular fashion              #
+##########################################
+
+# Set verbosity
+/control/execute ./Verbosity/Verbose.mac
+
+# Define material databases
+/gate/geometry/setMaterialDatabase ./Materials/GateMaterials.db
+
+# Define geometry
+/control/execute ./Geometry/Biograph_mCT_ecat.mac
+/control/execute ./Geometry/mCT_bed.mac
+
+# Define phantom
+/control/execute ./VoxelPhantoms/NEMA.mac
+
+# Define physics
+/control/execute ./Physics/Physics.mac
+
+# Initialise the simulation
+/gate/run/initialize
+/gate/physics/processList Initialized
+
+# Define sources
+/control/execute ./VoxelSources/NEMA.mac
+
+# Set digitiser
+/control/execute ./Digitiser/Digitiser.mac
+
+# Define output (local or on RAID array)
+/control/execute ./Output/Output.mac
+
+
+
+#-----------------------------------
+# Select random engine
+# Select from: JamesRandom Ranlux64 MersenneTwister(default)
+/gate/random/setEngineName JamesRandom
+
+# Select seed (default = CLHEP - always the same)
+/gate/random/setEngineSeed {seed}
+
+# Select random verbosity
+/gate/random/verbose 0
+#------------------------------------
+
+
+/vis/disable
+
+
+# Define experiment
+/control/execute ./Experiment/Experiment.mac
+
+# Run simulation
+/gate/application/startDAQCluster {t0} {t1} 0
+ 

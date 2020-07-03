@@ -1,0 +1,22 @@
+######################
+#                    #
+#   OUTPUT  MACRO    #
+#                    #
+######################
+#
+# - GN 28.11.18
+#
+
+########
+# ROOT #
+########
+
+/gate/output/root/enable
+/gate/output/root/setFileName            	../{output_loc}/{output_dir}/ROOT/{output_file}
+
+/gate/output/root/setRootHitFlag          0
+/gate/output/root/setRootSinglesFlag      0
+/gate/output/root/setRootCoincidencesFlag 1
+/gate/output/root/setRootdelayFlag        1
+/gate/output/root/setRootNtupleFlag       0
+

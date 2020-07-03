@@ -1,0 +1,81 @@
+!INTERFILE :=
+!imaging modality := nucmed
+!originating system := inter2gate
+!version of keys := 3.3
+date of keys := 2013:02:26
+conversion program := inter2gate
+program author := AndrewRobinson
+program version := 1.0.0
+program date := 2013:02:26
+;
+!GENERAL DATA :=
+!data offset in bytes := 0
+!name of data file := ./VoxelSources/images/QIBA_spheres_crop.img
+!INTERFILE :=
+!imaging modality := nucmed
+!originating system := inter2gate
+!version of keys := 3.3
+date of keys := 2013:02:26
+conversion program := inter2gate
+program author := AndrewRobinson
+program version := 1.0.0
+program date := 2013:02:26
+;
+!GENERAL DATA :=
+!data offset in bytes := 0
+patient name :=/home/gn/gatework/Biograph_mCT_sim_CYL/macros/Sources/QIBA_spheres_crop
+!patient ID := 123456
+patient dob := 0000:00:00
+patient sex := Unknown
+!study ID := /home/gn/gatework/Biograph_mCT_sim_CYL/macros/Sources/QIBA_spheres_crop
+exam type := CT
+data compressHeaderFileion := none
+data encode := none
+;
+!GENERAL IMAGE DATA :=
+!type of data := Tomographic
+!total number of images := 110
+study date := 1984:01:01
+study time := 00:00:00
+imagedata byte order := LITTLEENDIAN
+;
+number of energy windows := 1
+;
+energy window [1] :=
+energy window lower level [1] :=
+energy window upper level [1] :=
+flood corrected := N
+decay corrected := N
+;
+!SPECT STUDY (general) :=
+number of detector heads := 1
+;
+!number of images/energy window := 110
+!processHeaderFile status := Reconstructed
+!matrix size [1] := 329
+!matrix size [2] := 264
+!number format := unsigned integer
+!number of bytes per pixel := 2
+scaling factor (mm/pixel) [1] := 0.9766
+scaling factor (mm/pixel) [2] := 0.9766
+!number of projections := 110
+!extent of rotation := 
+!time per projection (sec) := 0
+study duration (sec) := 0
+!maximum pixel count := 15000
+patient orientation := head_in
+patient rotation := supine
+;
+!SPECT STUDY (reconstructed data) :=
+method of reconstruction := Unknown
+!number of slices := 110
+number of reference frame := 0
+slice orientation := Transverse
+slice thickness (pixels) := 2
+centre-centre slice separation (pixels) := 0
+filter name := Unknown
+filter parameters := Cutoff
+method of attenuation correction := measured
+scatter corrected := N
+oblique reconstruction := N
+!END OF INTERFILE :=

@@ -1,0 +1,24 @@
+###############################################
+# Experiment.mac                              #
+# Version: 0.2                                #
+# Define run length and number of projections #
+#                                             #
+# APR: 17/05/11                               #
+# andrew.paul.robinson@manchester.ac.uk       #
+#                                             #
+# Parameters:                                 #
+# {time_slice} = Time per projection          #
+# {time_start} = Start Time                   #
+# {time_stop}  = Stop Time                    #
+###############################################
+#                                             #
+# Adapted: GN 2019                            #
+# Changed for PET; remove proj., just time    #
+# slices.                                     #
+#                                             #
+###############################################
+
+/gate/application/verbose 2
+/gate/application/setTimeSlice  0.2 s
+/gate/application/setTimeStart  0 s
+/gate/application/setTimeStop   120  s

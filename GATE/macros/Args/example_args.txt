@@ -1,0 +1,1 @@
+[scanner,Biograph_mCT_ecat.mac][phantom,NEMA.mac][physics,Physics.mac][source,NEMA.mac][output_mac,Output.mac][output_loc,output_pet]

@@ -1,0 +1,34 @@
+#   ADAPTED FROM GATE v8.0 USERS MANUAL
+#      (MACRO FOR VOXELIZED SOURCE)
+
+
+/gate/source/addSource                                            nema_nu2 voxel
+
+/gate/source/nema_nu2/reader/insert                              image
+
+#
+# Activity from ActivityRange.dat: 2.62 kBq/ml in spheres, 0.52 kBq/ml in background
+# 
+/gate/source/nema_nu2/imageReader/translator/insert              range 
+/gate/source/nema_nu2/imageReader/rangeTranslator/readTable      ./VoxelSources/ActivityRange.dat 
+/gate/source/nema_nu2/imageReader/rangeTranslator/describe       1
+/gate/source/nema_nu2/imageReader/readFile                       ./VoxelSources/images/QIBA_spheres_crop.h33
+/gate/source/nema_nu2/imageReader/verbose                        1
+
+
+/gate/source/nema_nu2/setPosition                                -160.644449 -128.906184 -110. mm  
+# image slice (x,y) for nema is (0.976562mm)^2, and is (329 x 264) pixels
+
+
+
+/gate/source/nema_nu2/setType backtoback 
+/gate/source/nema_nu2/gps/particle gamma 
+/gate/source/nema_nu2/setForcedUnstableFlag true
+/gate/source/nema_nu2/setForcedHalfLife 6586.2 s
+/gate/source/nema_nu2/gps/energytype Mono
+/gate/source/nema_nu2/gps/monoenergy 511. keV 
+/gate/source/nema_nu2/gps/angtype iso 
+/gate/source/nema_nu2/gps/confine NULL 
+
+/gate/source/nema_nu2/dump                                       1 
+

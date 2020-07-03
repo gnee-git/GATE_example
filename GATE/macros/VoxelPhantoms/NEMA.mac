@@ -1,0 +1,10 @@
+#########################
+# NEMA Phantom Macro    #
+# GN 2019               #
+#########################
+
+/gate/world/daughters/name voxel_Phantom
+/gate/world/daughters/insert ImageNestedParametrisedVolume
+/gate/voxel_Phantom/geometry/setImage ./VoxelPhantoms/images/QIBA_crop3.h33
+/gate/voxel_Phantom/geometry/setRangeToMaterialFile ./VoxelPhantoms/AttenuationRange.dat
+/gate/voxel_Phantom/attachPhantomSD
